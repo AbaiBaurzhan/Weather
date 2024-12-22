@@ -43,7 +43,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                     self.arrayWeather = [weather]
                     
                     DispatchQueue.main.async {
-                        self.cityLabel.text = term.capitalized // Обновляем название города
+                        self.cityLabel.text = term.capitalized
                         self.tableView.reloadData()
                     }
                 } else {
