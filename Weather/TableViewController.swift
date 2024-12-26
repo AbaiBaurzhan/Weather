@@ -25,7 +25,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         navigationItem.searchController = search
         search.obscuresBackgroundDuringPresentation = false
         
-        searchWeather(term: "Astana")
+        searchWeather(term: "London")
     }
     
     func searchWeather(term: String) {
