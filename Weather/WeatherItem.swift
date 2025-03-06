@@ -12,17 +12,16 @@ struct WeatherItem {
     var weatherTemperature = ""
     var weatherWind = ""
     var weatherDescription = ""
-    
+
     init(json: JSON) {
-        if let item = json["temperature"].string {
-            weatherTemperature = item
+        if let temp = json["main"]["temp"].double {
+            weatherTemperature = "\(temp)°C"
         }
-        if let item = json["wind"].string {
-            weatherWind = item
+        if let wind = json["wind"]["speed"].double {
+            weatherWind = "\(wind) м/с"
         }
-        if let item = json["description"].string {
-            weatherDescription = item
+        if let description = json["weather"][0]["description"].string {
+            weatherDescription = description.capitalized
         }
     }
 }
-
